@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = "Q"
-  s.version             = "0.0.3"
+  s.version             = "0.0.4"
   s.summary             = "Asynchronous promise implementation for iOS"
   s.homepage            = "https://github.com/innerfunction/Q-ios"
   s.license             = { :type => "Apache", :file => "LICENSE" }
