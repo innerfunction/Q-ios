@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license             = { :type => "Apache", :file => "LICENSE" }
   s.author              = { "Julian Goacher" => "julian.goacher@innerfunction.com" }
   s.platform            = :ios
-  s.source              = { :git => "https://github.com/innerfunction/Q-ios.git", :tag => "0.0.1" }
-  s.source_files        = "Classes/*.{h,m}"
+  s.source              = { :git => "https://github.com/innerfunction/Q-ios.git", :tag => "0.0.4" }
+  s.source_files        = "Classes/Q.{h,m}"
   s.public_header_files = "Classes/Q.h"
 end
