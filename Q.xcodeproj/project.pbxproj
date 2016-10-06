@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07AE779F1BBB329E00E3DB50 /* Q.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07AE779E1BBB329E00E3DB50 /* Q.h */; };
-		07AE77A11BBB329E00E3DB50 /* Q.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE77A01BBB329E00E3DB50 /* Q.m */; };
+		0716D6741DA655DC00FF4CC1 /* Q.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716D6731DA655DC00FF4CC1 /* Q.m */; };
+		077D65EA1DA657640000AAD1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 077D65E91DA657640000AAD1 /* README.md */; };
 		07AE77A71BBB329E00E3DB50 /* libQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AE779B1BBB329E00E3DB50 /* libQ.a */; };
 /* End PBXBuildFile section */
 
@@ -29,16 +29,19 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				07AE779F1BBB329E00E3DB50 /* Q.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0716D6721DA655DC00FF4CC1 /* Q.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Q.h; sourceTree = "<group>"; };
+		0716D6731DA655DC00FF4CC1 /* Q.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Q.m; sourceTree = "<group>"; };
+		077D65E61DA657640000AAD1 /* Q.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Q.podspec; sourceTree = "<group>"; };
+		077D65E71DA657640000AAD1 /* pod-repo-push.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pod-repo-push.sh"; sourceTree = "<group>"; };
+		077D65E81DA657640000AAD1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		077D65E91DA657640000AAD1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		07AE779B1BBB329E00E3DB50 /* libQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQ.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		07AE779E1BBB329E00E3DB50 /* Q.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Q.h; sourceTree = "<group>"; };
-		07AE77A01BBB329E00E3DB50 /* Q.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Q.m; sourceTree = "<group>"; };
 		07AE77A61BBB329E00E3DB50 /* QTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AE77AC1BBB329E00E3DB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,10 +65,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0716D6711DA655DC00FF4CC1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0716D6721DA655DC00FF4CC1 /* Q.h */,
+				0716D6731DA655DC00FF4CC1 /* Q.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		07AE77921BBB329E00E3DB50 = {
 			isa = PBXGroup;
 			children = (
-				07AE779D1BBB329E00E3DB50 /* Q */,
+				077D65E61DA657640000AAD1 /* Q.podspec */,
+				077D65E71DA657640000AAD1 /* pod-repo-push.sh */,
+				077D65E81DA657640000AAD1 /* LICENSE */,
+				077D65E91DA657640000AAD1 /* README.md */,
+				0716D6711DA655DC00FF4CC1 /* Classes */,
 				07AE77AA1BBB329E00E3DB50 /* QTests */,
 				07AE779C1BBB329E00E3DB50 /* Products */,
 			);
@@ -78,15 +94,6 @@
 				07AE77A61BBB329E00E3DB50 /* QTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		07AE779D1BBB329E00E3DB50 /* Q */ = {
-			isa = PBXGroup;
-			children = (
-				07AE779E1BBB329E00E3DB50 /* Q.h */,
-				07AE77A01BBB329E00E3DB50 /* Q.m */,
-			);
-			path = Q;
 			sourceTree = "<group>";
 		};
 		07AE77AA1BBB329E00E3DB50 /* QTests */ = {
@@ -193,7 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07AE77A11BBB329E00E3DB50 /* Q.m in Sources */,
+				077D65EA1DA657640000AAD1 /* README.md in Sources */,
+				0716D6741DA655DC00FF4CC1 /* Q.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +370,7 @@
 				07AE77B11BBB329E00E3DB50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07AE77B21BBB329E00E3DB50 /* Build configuration list for PBXNativeTarget "QTests" */ = {
 			isa = XCConfigurationList;
@@ -370,6 +379,7 @@
 				07AE77B41BBB329E00E3DB50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
