@@ -64,7 +64,7 @@ promise.then((id)^(id result) {
   // No return statement here, code will crash!
 });
 ```
-This can be a particular problem when a _then_ block is the final step in a calculation and doesn't generate any particular result; in these cases, the block should return _nil_.
+This can be a particularly easy mistake to make when a _then_ block is the final step in a calculation and doesn't generate any particular result; in these cases, the block should return _nil_.
 
 # Status
 This project is currently released as beta code; however, it is fairly well tested and has been used in a number of production projects.
