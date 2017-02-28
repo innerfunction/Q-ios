@@ -19,7 +19,7 @@ QPromise *promise = [QPromise new];
 
 Later, resolve the promise with a result value:
 ```objective-c
-id value = "something";
+id value = @"something";
 [promise resolve:value];
 ```
 
@@ -43,18 +43,18 @@ Promises can be chained:
 ```objective-c
 QPromise *promise = [QPromise new];
 promise.then((id)(^id result) {
-    return [QPromise resolve:"a result!"];
+    return [QPromise resolve:@"a result!"];
 });
 ```
 
 Create a resolved promise:
 ```objective-c
-QPromise *resolved = [QPromise resolve:"a result!"];
+QPromise *resolved = [QPromise resolve:@"a result!"];
 ```
 
 Or create a rejected promise:
 ```objective-c
-QPromise *rejected = [QPromise reject:"obsolete"];
+QPromise *rejected = [QPromise reject:@"obsolete"];
 ```
 
 ## Gotchas
