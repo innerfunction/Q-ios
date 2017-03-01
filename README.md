@@ -1,7 +1,7 @@
 # Q-ios
 An asynchronous promise implementation for iOS.
 
-Inspired by the [Q asynchronous library for node](https://github.com/kriskowal/q), this library provides a partial implementation of the [Promises/A+ spec](https://promisesaplus.com/).
+Inspired by the [Q asynchronous promise library for node](https://github.com/kriskowal/q), this library provides a partial implementation of the [Promises/A+ spec](https://promisesaplus.com/).
 
 # Installation
 Install using CocoaPods:
@@ -56,6 +56,24 @@ Or create a rejected promise:
 ```objective-c
 QPromise *rejected = [QPromise reject:@"obsolete"];
 ```
+
+## Multiple promises
+Multiple asynchronous operations can be resolved in one go using the _all:_ method:
+```objective-c
+QPromise *promise1 = [self asyncOp:@1];
+QPromise *promise2 = [self asyncOp:@2];
+QPromise *promise3 = [self asyncOp:@3];
+NSArray *pending = @[ promise1, promise2, promise3 ];
+[QPromise all:pending]
+.then((id)^(NSArray *results) {
+    // Process results...
+})
+.fail(^(id error) {
+    // Process error...
+});
+```
+
+The _then_ block will be passed an array containing the result returned by each corresponding promise in the pending array. If any asynchronous operation fails and its promise rejected then the first error is passed to the _fail_ block.
 
 ## Gotchas
 A _then_ block must return a value. If you fail to do this, then XCode will not generate an error or warning when the code is compiled, but the code will crash with a BAD_ACCESS exception when run:
