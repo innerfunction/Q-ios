@@ -60,12 +60,16 @@ QPromise *rejected = [QPromise reject:@"obsolete"];
 ## Multiple promises
 Multiple asynchronous operations can be resolved in one go using the _all:_ method:
 ```objective-c
-QPromise *promise1 = [self asyncOp:@1];
-QPromise *promise2 = [self asyncOp:@2];
-QPromise *promise3 = [self asyncOp:@3];
+QPromise *promise1 = [self httpGet:url1];
+QPromise *promise2 = [self httpGet:url2];
+QPromise *promise3 = [self httpGet:url3];
 NSArray *pending = @[ promise1, promise2, promise3 ];
+
 [QPromise all:pending]
 .then((id)^(NSArray *results) {
+    id result1 = results[1];
+    id result2 = results[2];
+    id result3 = results[3];
     // Process results...
 })
 .fail(^(id error) {
