@@ -90,7 +90,7 @@ NSArray *pending = @[ promise1, promise2, promise3 ];
 The _then_ block will be passed an array containing the result returned by each corresponding promise in the pending array. If any asynchronous operation fails and its promise rejected then the first error is passed to the _fail_ block.
 
 ## Gotchas
-A _then_ block must return a value. If you fail to do this, then XCode will not generate an error or warning when the code is compiled, but the code will crash with a BAD_ACCESS exception when run:
+A _then_ block must return a value. If you fail to do this, then XCode will not generate an error or warning when the code is compiled, but the code will crash with a BAD_ACCESS exception when the block returns:
 ```objective-c
 promise.then((id)^(id result) {
   // No return statement here, code will crash!
