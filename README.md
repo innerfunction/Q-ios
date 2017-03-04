@@ -39,12 +39,22 @@ promise.then((id)^(id result) {
 });
 ```
 
-Promises can be chained:
+Promises can be chained using blocks:
 ```objective-c
 QPromise *promise = [QPromise new];
 promise.then((id)(^id result) {
     return [QPromise resolve:@"a result!"];
 });
+```
+
+or by resolving a promise with a promise:
+```objective-c
+QPromise *promiseA = [QPromise new];
+QPromise *promiseB = [QPromise new];
+
+/// ...stuff...
+
+promiseA.resolve( promiseB );
 ```
 
 Create a resolved promise:
