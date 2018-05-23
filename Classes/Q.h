@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /** Block signature for function calls (see Q.fcall). */
-typedef id (^QFn) ();
+typedef id (^QFn) (void);
 /** Block signature for then continuations. */
 typedef id (^QThen) (id);
 /** Block signature for fail continuations. */

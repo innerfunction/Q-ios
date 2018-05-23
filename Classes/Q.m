@@ -190,16 +190,16 @@
 - (QThen)thenForIndex:(NSInteger)index {
     return ^id(id value) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (_resolvedCount < _count) {
-                _resolvedCount++;
+            if (self->_resolvedCount < self->_count) {
+                self->_resolvedCount++;
                 if (value == nil) {
-                    [_values setObject:[NSNull null] atIndexedSubscript:index];
+                    [self->_values setObject:[NSNull null] atIndexedSubscript:index];
                 }
                 else {
-                    [_values setObject:value atIndexedSubscript:index];
+                    [self->_values setObject:value atIndexedSubscript:index];
                 }
-                if (_resolvedCount == _count) {
-                    [_promise resolve:_values];
+                if (self->_resolvedCount == self->_count) {
+                    [self->_promise resolve:self->_values];
                 }
             }
         });
@@ -209,7 +209,7 @@
 
 - (void)reject:(id)error {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_promise reject:error];
+        [self->_promise reject:error];
     });
 }
 
